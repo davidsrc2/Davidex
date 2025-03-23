@@ -15,6 +15,9 @@ body {
     max-width: 900px;
     margin: auto;
     padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 header {
@@ -65,6 +68,7 @@ footer {
     margin-top: 10px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .accordion-btn:hover {
@@ -81,47 +85,6 @@ footer {
     border-right: 2px solid #007acc;
     border-bottom: 2px solid #007acc;
     border-radius: 0 0 5px 5px;
-}
-
-/* Responsive Enhancements */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2em;
-    }
-
-    .container {
-        padding: 15px;
-    }
-
-    .accordion-btn {
-        font-size: 1em;
-        padding: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.5em;
-    }
-
-    .accordion-btn {
-        font-size: 0.95em;
-        padding: 10px;
-    }
-}
-
-/* Visual Enhancements */
-.container {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.accordion-btn {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.accordion-content {
     font-size: 0.95em;
     line-height: 1.5;
 }
@@ -153,6 +116,21 @@ footer {
     border-radius: 50%;
 }
 
+.timeline-date {
+    font-weight: bold;
+    color: #007acc;
+    display: block;
+    margin-bottom: 5px;
+}
+
+section {
+    padding: 25px;
+    margin: 30px 0;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
 /* Download CV Button */
 .download-cv-button {
     display: inline-block;
@@ -173,30 +151,7 @@ footer {
     transform: scale(1.05);
 }
 
-body.dark-mode .download-cv-button {
-    background-color: #444;
-    color: #eaeaea;
-}
-
-body.dark-mode .download-cv-button:hover {
-    background-color: #222;
-}
-
-.timeline-date {
-    font-weight: bold;
-    color: #007acc;
-    display: block;
-    margin-bottom: 5px;
-}
-
-section {
-    padding: 25px;
-    margin: 30px 0;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
+/* Certificates */
 .certificate-grid {
     display: flex;
     flex-wrap: wrap;
@@ -232,7 +187,7 @@ section {
     margin: 0;
 }
 
-/* Gallery Section */
+/* Gallery */
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -266,6 +221,33 @@ section {
     font-size: 0.9em;
     color: #555;
     margin-top: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .accordion-btn {
+        font-size: 1em;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .accordion-btn {
+        font-size: 0.95em;
+        padding: 10px;
+    }
 }
 
 /* Dark Mode */
@@ -303,7 +285,20 @@ body.dark-mode .gallery-caption {
     color: #ccc;
 }
 
-/* Toggle Switch */
+body.dark-mode .download-cv-button {
+    background-color: #444;
+    color: #eaeaea;
+}
+
+body.dark-mode .download-cv-button:hover {
+    background-color: #222;
+}
+
+body.dark-mode #skillsChart {
+    background-color: #2c2c2c;
+}
+
+/* Toggle Theme Switch */
 .theme-toggle {
     position: absolute;
     top: 20px;
@@ -354,3 +349,24 @@ input:checked + .slider {
 input:checked + .slider:before {
     transform: translateX(26px);
 }
+
+/* Scroll Animation - fade-in on scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#skillsChart {
+    max-width: 350px;
+    margin: 30px auto 0;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    display: block;
+  }
