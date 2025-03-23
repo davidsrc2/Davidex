@@ -94,10 +94,20 @@ if (ctx) {
   });
 }
 
-// Theme toggle
-const themeSwitcher = document.getElementById('themeSwitcher');
-if (themeSwitcher) {
-  themeSwitcher.addEventListener('change', () => {
-    document.body.classList.toggle('dark-mode');
+// Theme toggle using moon button
+document.addEventListener("DOMContentLoaded", () => {
+  const themeSwitcher = document.getElementById("themeSwitcher");
+  if (!themeSwitcher) return;
+
+  // Apply stored theme
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+  }
+
+  themeSwitcher.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains("dark-mode");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
   });
-}
+});

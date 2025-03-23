@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>David San Román – Blog</title>
+  <link rel="stylesheet" href="style/blog.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const switcher = document.getElementById("themeSwitcher");
+      const isDark = localStorage.getItem("theme") === "dark";
+
+      if (isDark) document.body.classList.add("dark-mode");
+
+      switcher.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        const theme = document.body.classList.contains("dark-mode") ? "dark" : "light";
+        localStorage.setItem("theme", theme);
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>📝 Blog – David San Román</h1>
+    <button id="themeSwitcher" aria-label="Toggle dark mode">🌓</button>
+    <nav>
+      <a href="index.html">← Back to Home</a>
+    </nav>
+  </header>
+
+  <main class="fade-in">
+    <section class="blog-post">
+      <h2>🔐 My First Cybersecurity Challenge: Port Scanning with Nmap</h2>
+      <p>Today I started with a basic yet fundamental practice: scanning ports on a local network using <strong>Nmap</strong>. I learned how to identify active services, operating systems, and better understand a system's attack surface.</p>
+      <p>Commands used:</p>
+      <ul>
+        <li><code>nmap -sS 192.168.1.1</code> → TCP SYN scan</li>
+        <li><code>nmap -A 192.168.1.1</code> → OS and service version detection</li>
+        <li><code>nmap -p- 192.168.1.1</code> → full port scan</li>
+      </ul>
+      <p>This was a great first step toward diving deeper into more complex tasks like vulnerability analysis. One step at a time!</p>
+      <p><em>Published: March 2023</em></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 David San Román</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
