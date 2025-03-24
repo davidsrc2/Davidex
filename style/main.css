@@ -360,3 +360,15 @@ body.dark-mode #themeSwitcher {
     border-radius: 10px;
     display: block;
   }
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+
+  .profile-container {
+    display: flex;
+    align-items: center;
+  }
