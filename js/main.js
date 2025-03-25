@@ -15,7 +15,6 @@ buttons.forEach((btn) => {
     });
 });
 
-
 // Scroll fade-in effect
 const faders = document.querySelectorAll('.fade-in');
 const observer = new IntersectionObserver((entries) => {
@@ -26,19 +25,6 @@ const observer = new IntersectionObserver((entries) => {
   });
 });
 faders.forEach(el => observer.observe(el));
-
-// Accordion toggle
-const accordionBtns = document.querySelectorAll('.accordion-btn');
-accordionBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const content = btn.nextElementSibling;
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + 'px';
-    }
-  });
-});
 
 // Chart.js skills radar
 const ctx = document.getElementById('skillsChart');
