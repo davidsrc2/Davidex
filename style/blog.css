@@ -6,139 +6,169 @@ body {
     margin: 0;
     padding: 0;
     color: #222;
-  }
+}
   
-  header {
+header {
     background-color: #007acc;
     color: white;
     padding: 20px;
     text-align: center;
-  }
+}
   
-  header h1 {
+header h1 {
     margin: 0;
     font-size: 2rem;
-  }
+}
   
-  nav a {
+nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-  }
+}
   
-  main {
+main {
     max-width: 800px;
     margin: 40px auto;
     padding: 0 20px;
-  }
+}
   
-  .blog-post {
+.blog-post {
     background-color: #ffffff;
     border-left: 4px solid #007acc;
     padding: 20px;
     margin-bottom: 30px;
     border-radius: 6px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  }
+}
+.first-post {
+  background-color: #ffffff;
+  border-left: 4px solid #007acc;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
   
-  .blog-post code {
+.blog-post code {
     background-color: #eef6fb;
     padding: 2px 6px;
     border-radius: 4px;
     font-family: monospace;
     color: #d63384;
-  }
+}
+.first-post code {
+  background-color: #eef6fb;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #d63384;
+}
   
-  footer {
+footer {
     text-align: center;
     padding: 20px;
     background-color: #eee;
-    margin-top: 40px;}
+    margin-top: 40px;
+}
 
 /* Dark mode styles */
 body.dark-mode {
-  background-color: #121212;
-  color: #ddd;
+    background-color: #121212;
+    color: #ddd;
 }
 
 body.dark-mode header {
-  background-color: #1e1e1e;
+    background-color: #1e1e1e;
 }
 
 body.dark-mode .blog-post {
+    background-color: #1e1e1e;
+    border-left-color: #87cefa;
+}
+body.dark-mode .first-post {
   background-color: #1e1e1e;
   border-left-color: #87cefa;
 }
 
 body.dark-mode footer {
-  background-color: #1e1e1e;
-  color: #aaa;
+    background-color: #1e1e1e;
+    color: #aaa;
 }
 
 #themeSwitcher {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: white;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
 }
 
 body.dark-mode #themeSwitcher {
-  color: #ffd700;
+    color: #ffd700;
+}
+
+/* Asegúrate de que el primer post sea visible desde el principio */
+.first-post {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: none !important;
 }
 
 /* Animación de entrada (fade-in) */
 .fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    opacity: 1;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Transición para el cambio de tema */
 body {
-  transition: background-color 0.5s ease, color 0.5s ease;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 body.dark-mode {
-  background-color: #121212;
-  color: #ddd;
-  transition: background-color 0.5s ease, color 0.5s ease;
+    background-color: #121212;
+    color: #ddd;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-body.dark-mode header {
-  background-color: #1e1e1e;
-}
+
+
 
 body.dark-mode .blog-post {
+    background-color: #1e1e1e;
+    border-left-color: #87cefa;
+}
+body.dark-mode .first-post {
   background-color: #1e1e1e;
   border-left-color: #87cefa;
 }
 
 body.dark-mode footer {
-  background-color: #1e1e1e;
-  color: #aaa;
+    background-color: #1e1e1e;
+    color: #aaa;
 }
 
 #themeSwitcher {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: white;
-  transition: color 0.3s ease;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
+    transition: color 0.3s ease;
 }
 
 body.dark-mode #themeSwitcher {
-  color: #ffd700;
+    color: #ffd700;
 }

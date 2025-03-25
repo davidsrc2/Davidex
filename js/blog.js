@@ -13,6 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Animaciones al hacer scroll (fade-in)
     const faders = document.querySelectorAll('.fade-in');  // Seleccionar todos los elementos con la clase .fade-in
+    const firstPost = document.querySelector('.first-post'); // Seleccionar el primer post
+
+    // Mostrar el primer post inmediatamente
+    if (firstPost) {
+        firstPost.classList.add('show');
+    }
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
