@@ -75,6 +75,7 @@ body.dark-mode footer {
     color: #aaa;
 }
 
+/* Transiciones en botones */
 .accordion-btn {
     background-color: #007acc;
     color: white;
@@ -87,12 +88,14 @@ body.dark-mode footer {
     font-size: 1.1em;
     margin-top: 10px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .accordion-btn:hover {
     background-color: #005f99;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .accordion-content {
@@ -143,15 +146,24 @@ body.dark-mode footer {
     margin-bottom: 5px;
 }
 
+/* Añadir animaciones de desplazamiento para las secciones */
 section {
     padding: 25px;
     margin: 30px 0;
     background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-/* Download CV Button */
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Transición para el botón de descarga de CV */
 .download-cv-button {
     display: inline-block;
     padding: 12px 20px;
@@ -163,12 +175,13 @@ section {
     border-radius: 5px;
     text-decoration: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .download-cv-button:hover {
     background-color: #005f99;
     transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Certificates */
@@ -180,6 +193,7 @@ section {
     margin-top: 20px;
 }
 
+/* Animaciones para las tarjetas de certificados */
 .certificate-card {
     display: flex;
     flex-direction: column;
@@ -188,11 +202,12 @@ section {
     text-align: center;
     text-decoration: none;
     color: #007acc;
-    transition: transform 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .certificate-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .certificate-card img {
@@ -216,17 +231,19 @@ section {
     margin-top: 20px;
 }
 
+/* Animaciones para la galería de imágenes */
 .gallery-item {
     position: relative;
     width: 200px;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-item:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .gallery-item img {
@@ -271,9 +288,11 @@ section {
 }
 
 /* Dark Mode */
+/* Modo oscuro y transición */
 body.dark-mode {
     background-color: #1e1e1e;
     color: #eaeaea;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 body.dark-mode header {
@@ -285,6 +304,7 @@ body.dark-mode section {
     background: #2c2c2c;
     color: #eaeaea;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 body.dark-mode .accordion-btn {
@@ -320,27 +340,27 @@ body.dark-mode #skillsChart {
 
 /* Dark Mode Toggle Button */
 #themeSwitcher {
-  background: transparent;
-  border: none;
-  font-size: 1.4rem;
-  cursor: pointer;
-  color: white;
-  padding: 5px 10px;
-  transition: transform 0.2s ease;
-  position: absolute;
-  top: 20px;
-  right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: white;
+    padding: 5px 10px;
+    transition: transform 0.2s ease;
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
 #themeSwitcher:hover {
-  transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 body.dark-mode #themeSwitcher {
-  color: #ffd700;
+    color: #ffd700;
 }
 
-/* Scroll Animation - fade-in on scroll */
+/* Animación de entrada (fade-in) */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);

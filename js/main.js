@@ -80,20 +80,40 @@ if (ctx) {
   });
 }
 
-// Theme toggle using moon button
 document.addEventListener("DOMContentLoaded", () => {
+  // Activar la animación de scroll para secciones
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+          }
+      });
+  }, { threshold: 0.5 }); // Detecta cuando el 50% de la sección es visible
+
+  sections.forEach(section => {
+      observer.observe(section);
+  });
+
+  // Agregar animación a las secciones del blog
+  const blogPosts = document.querySelectorAll('.blog-post');
+  blogPosts.forEach(post => {
+      post.classList.add('fade-in');
+      observer.observe(post);
+  });
+
+  // Activar el cambio de tema
   const themeSwitcher = document.getElementById("themeSwitcher");
   if (!themeSwitcher) return;
 
-  // Apply stored theme
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
-    document.body.classList.add("dark-mode");
+      document.body.classList.add("dark-mode");
   }
 
   themeSwitcher.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    const isDark = document.body.classList.contains("dark-mode");
-    localStorage.setItem("theme", isDark ? "dark" : "light");
+      document.body.classList.toggle("dark-mode");
+      const isDark = document.body.classList.contains("dark-mode");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
   });
 });

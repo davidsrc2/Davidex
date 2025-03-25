@@ -3,22 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>David San Roman – Blog</title>
+  <title>David San Román – Blog</title>
   <link rel="stylesheet" href="style/blog.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const switcher = document.getElementById("themeSwitcher");
-      const isDark = localStorage.getItem("theme") === "dark";
-
-      if (isDark) document.body.classList.add("dark-mode");
-
-      switcher.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-        const theme = document.body.classList.contains("dark-mode") ? "dark" : "light";
-        localStorage.setItem("theme", theme);
-      });
-    });
-  </script>
+  <!-- Asegúrate de que se cargue blog.js en lugar de main.js -->
+  <script src="js/blog.js" defer></script>
 </head>
 <body>
   <header>
@@ -30,7 +18,8 @@
   </header>
 
   <main class="fade-in">
-    <section class="blog-post">
+    <!-- Blog post 1 -->
+    <section class="blog-post fade-in">
       <h2>🔐 My First Cybersecurity Challenge: Port Scanning with Nmap</h2>
       <p>Today I started with a basic yet fundamental practice: scanning ports on a local network using <strong>Nmap</strong>. I learned how to identify active services, operating systems, and better understand a system's attack surface.</p>
       <p>Commands used:</p>
@@ -42,7 +31,9 @@
       <p>This was a great first step toward diving deeper into more complex tasks like vulnerability analysis. One step at a time!</p>
       <p><em>Published: March 2023</em></p>
     </section>
-    <section class="blog-post">
+
+    <!-- Blog post 2 -->
+    <section class="blog-post fade-in">
       <h2>🔐 Working on the TryHackMe SAL1 Exam – A Step Toward Cybersecurity</h2>
       <p>As of 2025, I am currently working on the <strong>sal1 exam</strong> from TryHackMe. This is an important step for me to deepen my understanding of cybersecurity and pursue a career in this exciting field.</p>
       <p>Through this exam, I am enhancing my practical skills in areas such as system exploitation, network attacks, and vulnerability analysis.</p>
@@ -55,6 +46,6 @@
     <p>© 2025 David San Román</p>
   </footer>
 
-  <script src="main.js"></script>
 </body>
 </html>
+
