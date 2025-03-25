@@ -41,6 +41,7 @@ main {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 .first-post {
+  
   background-color: #ffffff;
   border-left: 4px solid #007acc;
   padding: 20px;
@@ -117,9 +118,9 @@ body.dark-mode #themeSwitcher {
     transition: none !important;
 }
 
-/* Animación de entrada (fade-in) */
+/* Animación de entrada con retraso */
 .fade-in {
-    opacity: 1;
+    opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
@@ -127,6 +128,11 @@ body.dark-mode #themeSwitcher {
 .fade-in.show {
     opacity: 1;
     transform: translateY(0);
+}
+.first-post {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 /* Transición para el cambio de tema */
