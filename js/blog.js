@@ -1,14 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Cambiar entre el modo oscuro y claro
     const switcher = document.getElementById("themeSwitcher");
     const isDark = localStorage.getItem("theme") === "dark";
 
-    if (isDark) document.body.classList.add("dark-mode");
+    // Verifica si ya está activado el modo oscuro y lo aplica al cargar la página
+    if (isDark) {
+        document.body.classList.add("dark-mode");
+        switcher.textContent = "🌙";  // Puedes cambiar el icono del botón, si quieres
+    } else {
+        switcher.textContent = "🌞";  // Si está en modo claro, mostrar el icono de sol
+    }
 
     switcher.addEventListener("click", () => {
         document.body.classList.toggle("dark-mode");
+
         const theme = document.body.classList.contains("dark-mode") ? "dark" : "light";
         localStorage.setItem("theme", theme);
+
+        // Cambiar el icono del botón dependiendo del tema
+        if (theme === "dark") {
+            switcher.textContent = "🌙";  // Icono de luna
+        } else {
+            switcher.textContent = "🌞";  // Icono de sol
+        }
     });
 
     // Verificar el tamaño de la pantalla

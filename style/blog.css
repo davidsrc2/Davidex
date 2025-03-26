@@ -97,14 +97,19 @@ body.dark-mode footer {
 }
 
 #themeSwitcher {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
     background: transparent;
     border: none;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     cursor: pointer;
     color: white;
+    padding: 5px 10px;
+    transition: transform 0.2s ease;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+#themeSwitcher:hover {
+    transform: scale(1.2);
 }
 
 body.dark-mode #themeSwitcher {
@@ -145,9 +150,6 @@ body.dark-mode {
     color: #ddd;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
-
-
-
 
 body.dark-mode .blog-post {
     background-color: #1e1e1e;
